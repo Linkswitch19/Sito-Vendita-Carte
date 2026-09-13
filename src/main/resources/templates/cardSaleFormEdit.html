@@ -1,0 +1,12 @@
+<main th:replace="~{fragments/layout :: layout(
+pageTitle='Edit Card',
+titolo ='Edit Card',
+nomePagina='edit',
+useBootstrap=false,
+cssFile=${{'/css/cardSaleForm.css'}},
+pageScripts=${{'/scripts/form.js'}},
+pageContent = ~{::content})
+}">
+    <div th:fragment="content" th:replace="fragments/formEdit :: editCard(${carta})"></div>
+
+</main>

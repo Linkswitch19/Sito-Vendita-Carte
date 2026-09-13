@@ -1,0 +1,26 @@
+<section class="contenuto" th:fragment="descCarta(carta)">
+    <h3>Informazioni sulla Carta:</h3>
+
+    <article>
+        <h2 class="NomeCarta" th:text="${carta.getNome()}"></h2>
+
+        <footer><p th:text="${carta.getCopyright()}"></p></footer>
+    </article>
+    <!--Description List : he Description Term element e DescriptionList-->
+    <article class="Descrizione">
+        <h3>Dettagli Carta:</h3>
+        <dl>
+            <dt>Descrizione Personaggio</dt>
+            <dd th:text="${carta.getDescription()}"></dd>
+
+            <dt>Stato Carta</dt>
+            <dd th:text="${carta.getCondizione()}"></dd>
+
+            <dt>Data Aggiunta</dt>
+            <dd th:text="${carta.getDate()}"></dd>
+
+            <dt>Venditore</dt>
+            <dd th:text="${carta.getAuthor()}"></dd>
+        </dl>
+    </article>
+</section>

@@ -1,0 +1,14 @@
+
+<script type="module" src="/scripts/registrazioneCheck.js"></script>
+<main
+        th:replace="~{fragments/layout :: layout(
+        pageTitle ='Registrazione',
+        titolo='Account',
+        nomePagina='reg',
+        useBootstrap=false,
+        cssFile = ${{'/css/registrazione.css'}},
+        pageScripts=${{'/scripts/registerAnimazione.js'}},
+        pageContent=~{::content})}"
+>
+    <div th:fragment="content" th:replace="fragments/login_registrazione :: registrazione"></div>
+</main>

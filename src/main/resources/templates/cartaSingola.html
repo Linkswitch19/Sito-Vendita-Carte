@@ -1,0 +1,16 @@
+<!--Includere layoult-->
+<main th:replace="~{fragments/layout :: layout(
+pageTitle= ${carta.getNome()},
+titolo='Carta' ,
+nomePagina='',
+useBootstrap=true,
+cssFile=${{'/css/cardSale.css'}},
+pageScripts=${{'/scripts/SlideGallery.js'}},
+pageContent = ~{::content}
+)}">
+    <!--Inserire frammenti-->
+    <!--Sostituisce direttamente o mettendo prima un div con il fragment mette un div prima-->
+    <div th:fragment="content"  th:replace="/fragments/cartaInfo ::cartaInfo(${carta})"></div>
+
+
+</main>

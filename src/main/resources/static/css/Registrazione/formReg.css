@@ -1,0 +1,297 @@
+section {
+  padding-top: 5rem;
+  padding-bottom: 14.3rem;
+ 
+  display: grid;
+  place-content: center;
+ 
+}
+
+.container{
+  position: relative;
+  width: 850px;
+  height: 500px;
+  background-color: white;
+  box-shadow: 25px 30px 55px #5557;
+  border-radius: 13px;
+  overflow: hidden;
+
+}
+
+.form-container{
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  padding: 0px 40px;
+  transition: all 0.6s ease-in-out
+}
+
+.sign-up-container{
+  opacity: 0;
+  z-index: 1;
+
+
+}
+
+.sign-in-container{
+  z-index: 2;
+}
+form{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+
+}
+
+h1{
+  color: var(--mainColor);
+  
+}
+span{
+  font-size: 12px;
+}
+
+.infield{
+  position: relative;
+  margin: 8px 0px;
+  width: 100%;
+  display: flex;
+}
+
+input{
+  width: 100%;
+  padding: 12 px 8px;
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+label{
+  position: absolute;
+  left: 50%;
+  top:100%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: var(--mainColor);
+  transition: 0.3s;
+}
+
+input:focus{
+  width: 100%;
+}
+
+container>a{
+  color: darkslategrey;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 14px 0px;
+}
+
+container>a.forgot{
+  padding-bottom: 3px;
+  border-bottom: 2px solid white ;
+}
+
+.bottoneSubmit,button{
+  border-radius: 20px;
+  border: 1px solid var(--mainColor);
+  background: var(--mainColor);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+ 
+
+}
+
+.bottoneSubmit,.form-container button{
+  margin-top: 17px;
+  transition: 80ms ease-in;
+}
+
+.bottoneSubmit:hover,.form-container button:hover{
+  background: white;
+  color: var(--mainColor);
+}
+
+.overlay-container{
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out ;
+  z-index: 9;
+}
+
+#overlayBtn{
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  transform: translateX(-50%);
+  width: 143.67px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 20px;
+
+}
+
+.overlay-right ,.overlay-left{
+ 
+  background-size:cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+.overlay-right{
+  background-image: url(../../immagini/saber_rin.jpg);
+}
+
+.overlay-left{
+  background-image: url(../../immagini/chiaki.jpg);
+}
+
+.overlay{
+  position: relative;
+  
+  color: black;
+  
+  left: -150%;
+  height: 100%;
+  width: 250%;
+  transition: transform 0.6s ease-in-out;
+
+}
+
+.overlay-panel{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 40px;
+  text-align: center;
+  height: 100%;
+  width: 340px;
+  transition: 0.6s ease-in-out;
+  
+
+
+
+}
+
+.overlay-left{
+  right: 60%;
+  transform: translateX(-12%);
+
+}
+
+.overlay-right{
+  right: 0;
+  transform: translateX(0%);
+}
+
+.overlay-panel h1 {
+  color:var(--mainColor);
+  text-shadow: 
+  1px 1px 0px white, 
+  -1px -1px 0px white, 
+  1px -1px 0px white, 
+  -1px 1px 0px white; /* Ombre per simulare il bordo bianco */
+}
+.overlay-right >p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin: 25px 0px 35px;
+  color: palevioletred;
+  text-shadow: 
+  1px 1px 0px white, 
+  -1px -1px 0px white, 
+  1px -1px 0px white, 
+  -1px 1px 0px white; /* Ombre per simulare il bordo bianco */
+}
+
+.overlay-left >p,.overlay-right >p{
+
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin: 25px 0px 35px;
+  color: palevioletred;
+  text-shadow: 
+  1px 1px 0px white, 
+  -1px -1px 0px white, 
+  1px -1px 0px white, 
+  -1px 1px 0px white; /* Ombre per simulare il bordo bianco */
+
+}
+
+.overlay-left >p {
+  
+  color: slateblue;
+
+}
+
+
+.overlay-panel button{
+  border: 2px solid white;
+  background-color: palevioletred;
+}
+.righ-panel-active .overlay-container{
+  transform: translateX(-150%);
+
+
+}
+.righ-panel-active .overlay{
+  transform: translateX(50%);
+}
+
+.righ-panel-active .overlay-left{
+  transform: translateX(25%);
+}
+
+
+.righ-panel-active .overlay-right{
+  transform: translateX(35%);
+}
+
+.righ-panel-active .sign-in-container{
+  transform: translateX(20%);
+  opacity: 0;
+}
+
+
+.righ-panel-active .sign-up-container{
+  transform: translateX(66.7%);
+  opacity: 1;
+  z-index: 5;
+  animation: show;
+}
+
+@keyframes show {
+  0%, 50%{
+    opacity: 0;
+    z-index: 1;
+  }
+  50.1%,100%{
+    opacity: 1;
+    z-index: 5;
+  }
+
+  
+}

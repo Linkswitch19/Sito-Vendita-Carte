@@ -1,0 +1,41 @@
+
+<div class="DisposizioneCarte"  th:fragment="cardList(carte)"> <!--Utilizzo di cardList(carte) per passarli le carte-->
+
+    <!--Rimpiazzo semplice con solo th:replace con raplace non cambia perche rimpiazzera ma con include si wrapper-->
+
+    <aside id="left-aside">
+        <img src="/immagini/rin_side.jpg" alt="sfondo a lato">
+    </aside>
+
+    <aside id="right-aside">
+        <img src="/immagini/saber_side.jpg" alt="Sfondo destro">
+    </aside>
+
+
+
+
+    <section class="containerCarteGrid">
+
+
+        <h2 class="titolo-carta">Carte in vendita</h2>
+        <article class="CardArticle" th:each="card:${carte}">
+
+            <img th:src="${card.getBase64Image(card.getImmagini()[0])}" alt="Immagine Carta" width="200" height="280" class="annuncio" >
+            <div class="CardData">
+                <span th:text="${card.getCopyright()}" class="cardDesc"></span>
+                <h2 th:text="${card.getNome()}" class="CardTitle"></h2>
+                <a th:href="@{'card/'+${card.getId()}}" class="BottoneCarta">Dettagli</a>
+
+
+            </div>
+        </article>
+
+
+
+
+
+    </section>
+
+
+
+</div>

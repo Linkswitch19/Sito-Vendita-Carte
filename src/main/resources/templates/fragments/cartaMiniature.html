@@ -1,0 +1,21 @@
+<div class="default gallery" th:fragment="cartaThumb(carta)">
+    <div class="main-img"> <!--stat mi da index del for-->
+        <img th:each="nomeImmagine, stat : ${carta.getImmagini()}"
+             th:src="${carta.getBase64Image(nomeImmagine)}"
+             th:class="${stat.index == 0} ? 'active' : ''"
+             th:alt="${nomeImmagine}"
+             width="400" height="560" />
+    </div>
+
+    <div class="thumb-list">
+        <div th:each="nomeImmagine,stat :${carta.getImmagini()}"
+             th:class="${stat.first} ? 'active' : ''">
+            <img th:src="${carta.getBase64Image(nomeImmagine)}" th:alt="${nomeImmagine}">
+        </div>
+
+
+
+
+    </div>
+
+</div>

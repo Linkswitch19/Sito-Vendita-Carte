@@ -1,0 +1,52 @@
+
+
+#left-aside,#right-aside{
+  
+    position: absolute;
+    
+  
+   
+    top: 0;
+
+    width: auto; /* Occupa metà dello schermo a destra */
+    height: 100%; /* Occupa tutta l'altezza della finestra */
+}
+
+#right-aside{
+    right: 0;
+    
+}
+
+#left-aside{
+   
+
+   
+    left: 0;
+
+    
+}
+
+
+aside img {
+    width: auto;
+    height: 100%;
+    max-width: 130px;
+    object-fit: cover; /* L'immagine si adatta senza essere ritagliata */
+    
+}
+
+.DisposizioneCarte{
+    overflow:hidden; /* Impedisce lo scorrimento interno */
+    position: relative; /*fa porcate*/
+   
+   
+}
+
+
+
+
+
+
+
+
+

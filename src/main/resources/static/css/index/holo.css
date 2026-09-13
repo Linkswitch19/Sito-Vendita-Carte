@@ -1,0 +1,18 @@
+/*
+HOLO
+*/
+
+
+
+.card-image{
+   
+    border-radius: 15px;
+    transition: all 0.5s ease;
+  }
+  
+    
+  .card-image:hover {
+    width: 30%;
+    height: auto;
+    box-shadow: 0 0 20px white;
+  }

@@ -1,0 +1,11 @@
+footer {
+   
+   
+    width: 100%;
+    background-color: var(--mainColor);
+    color: white;
+    text-align: center;
+    z-index: 200;
+ }
+
+ 

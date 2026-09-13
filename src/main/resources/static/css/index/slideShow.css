@@ -1,0 +1,102 @@
+/*
+Slideshow
+*/
+
+
+.containerSlide{
+
+    background-color: black;
+}
+
+.SlideShow{
+    position: relative; /* Ancestor*/
+    max-width: 100rem; /*grandezza slide*/
+    margin: 0 auto;
+}
+
+.Slider{
+    display: flex;
+    aspect-ratio: 16/9;
+
+    overflow: hidden;
+
+
+    scroll-snap-type: both mandatory;
+
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+    border-radius: 0.5rem; /* bordi rotondi*/
+}
+
+
+
+.background-image{
+
+    flex-grow: 1;
+    flex-shrink:0 ; /*Non si riduce ma aumenta grow 1*/
+    flex-basis: 100%; /** grande quanto il contenitore slider*/
+    /*flex 1 0 100%*/
+
+
+    width: auto;
+    height: 100%; /* Forza la stessa altezza della slide */
+    scroll-snap-align: start;/*ora lo scroll passa allo start del'imagine sempre combo con x mandatory*/
+
+    z-index: 2; /* Imposta un valore inferiore per l'immagine di sfondo */
+
+
+}
+
+
+.slide {
+    position: relative; /*posizione*/
+
+
+}
+
+
+.card-image {
+    width: 20%;
+    height: auto;
+    position: absolute; /* Posiziona la carta sopra l'immagine */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra perfettamente la carta */
+    z-index: 10;
+
+}
+
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 49%;
+    background-color: white;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover,.slider-nav a.active{
+    opacity: 1;
+}
+
+.containerSlide h3{
+    color: white;
+    background-color: #131415;
+
+    text-align: center;
+}
+
+.SlideShow img:not(.active){
+    display: none;
+}
+

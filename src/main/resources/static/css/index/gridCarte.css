@@ -1,0 +1,229 @@
+
+  /*
+  Grid
+  */
+  
+
+  .DisposizioneCarte{
+    display: grid;
+    place-items:center;
+    
+    width: 100%; /*dato le sidebar*/
+    padding-block: 5rem;
+
+
+  }
+
+  .containerCarteGrid{
+    display: grid;
+    row-gap: 3.5rem;
+  }
+  .CardArticle{
+    position: relative;
+    overflow: hidden; /* Descrizione dentro la carta*/
+
+
+  }
+
+  .annuncio{
+    width: 328px;
+    object-fit: cover;
+    
+    border-radius: 1rem; 
+
+  }
+
+.CardData{
+    width: 288px;
+    background-color: var(--DisposizioneCarte-color);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadowBlack); /*hsla(h, s%, l%, a)*/
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem; /*Posizione iniziale*/
+    left :0;
+    right: 0;
+    margin-inline:auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+
+}
+
+.cardDesc{
+    display: block;
+    font-size:xx-small;
+    margin-bottom: .25rem;
+
+}
+
+.CardTitle{
+    font-weight: 500;
+    margin-bottom: .75rem;
+    
+}
+
+.BottoneCarta{
+    text-decoration: none;
+    font-size:medium;
+    font-weight: 500;
+    color: var(--mainColor);
+}
+
+.BottoneCarta:hover{
+    text-decoration: underline;
+
+}
+
+/*
+ Animazioni Grid
+*/
+.CardArticle:hover .CardData{
+    animation: mostra-dati 1s forwards;
+    opacity: 1;
+    transition: opacity 0.3s;
+
+}
+
+.CardArticle:hover{
+    animation: rimuovi-overflow 2s forwards;
+
+}
+.CardArticle:not(:hover){
+    animation: show-overflow 2s forwards;
+    
+
+}
+
+.CardArticle:not(:hover) .CardData{
+    animation: nascondi-dati 1s forwards;
+    
+
+}
+
+@keyframes mostra-dati{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+
+    }
+
+}
+
+@keyframes rimuovi-overflow  {
+    to{
+        overflow: initial; /*defaul overflow*/
+    }
+
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow:initial;
+        pointer-events: none; /*rende non clicabile durante l'animazione*/
+    }
+    50%{
+      overflow: hidden;
+    }
+    
+
+}
+
+@keyframes nascondi-dati {
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+    
+}
+
+/*Media query*/
+
+@media screen and (max-width:340px) {
+        .containerCarteGrid{
+            margin-inline: 1rem;
+        }
+        .CardData{
+            width: 250px;
+            padding: 1rem;
+        }
+        
+    }
+
+ @media screen and (min-width:928px) {
+        .titolo-carta{
+            grid-column: 1 / -1; /* Occupa tutta la riga */
+           
+
+
+        }
+       
+        .containerCarteGrid{
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 1.5rem;
+    
+        }
+        
+    }
+
+
+@media screen and (min-width:1600px) {
+    
+    
+    .containerCarteGrid{
+        grid-template-columns: repeat(4,1fr); /*Disposizione a tre colonne*/
+
+    }
+
+    .annuncio{
+        width: 288px;
+        height: auto;
+    }
+
+   
+    
+    
+}
+
+@media screen and (min-width:2169px) {
+    
+    
+    .containerCarteGrid{
+        grid-template-columns: repeat(4,2fr); /*Disposizione a tre colonne*/
+
+    }
+
+    .annuncio{
+        width: 400px;
+        height: auto;
+    }
+
+   
+    
+    
+}
+
+@media screen and (min-width:3000px) {
+    
+    
+    .containerCarteGrid{
+        grid-template-columns: repeat(4,2fr); /*Disposizione a tre colonne*/
+
+    }
+
+    .annuncio{
+        width: 600px;
+        height: auto;
+    }
+
+   
+    
+    
+}
+  

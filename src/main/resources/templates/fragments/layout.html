@@ -1,0 +1,32 @@
+<!--Si usa quando più paginene hanno un  formato simile se no dovre fare replace a pagina e fare comunque molte più righe--->
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(pageTitle,titolo ,nomePagina, useBootstrap, cssFile, pageScripts, pageContent)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Sito di carte collezionabili">
+  <meta name="author" content="Andre Peiti Ocampo">
+  <meta name="language" content="it">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${pageTitle}"></title>
+  <th:block th:if=" ${cssFile !=null}" th:each="css:${cssFile}" >
+    <link rel="stylesheet" th:href="@{${css}}">
+  </th:block>
+  <th:block th:if="${pageScripts!=null}" th:each="js:${pageScripts}">
+    <script th:src="@{${js}}" defer></script>
+  </th:block>
+  <th:block th:if="${useBootstrap}">
+    <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" rel="stylesheet">
+  </th:block>
+
+</head>
+<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+<body>
+<div  th:replace="fragments/navbar :: navbar(${nomePagina}) "></div>
+<main>
+  <h2 class="intestazione" style="margin-bottom: 0" th:text="${titolo}"></h2>
+  <th:block th:replace="${pageContent}"/>
+
+</main>
+<footer th:replace="fragments/footer::footer"></footer>
+</body>
+</html>

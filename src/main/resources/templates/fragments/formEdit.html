@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<div class="containerForm" th:fragment="editCard(carta)">
+    <form th:action="@{/card/new}" method="post"  enctype="multipart/form-data" th:object="${carta}">
+        <fieldset>
+            <legend>Carta</legend>
+            <input type="hidden" th:field="*{id}" />
+            <!--Label col il id-->
+            <!-- p evito br-->
+            <div class=" NomeCarta">
+                <p>Nome Carta</p> <!-- * al posto di $ per gli ogetti con $ inprevedibili-->
+                <label> <input class="input nome" name="NomeCartaInput" id="NomeCartaInput"  th:value="${carta.getNome()}" th:field="*{nome}"> </label>
+            </div>
+            <div class="NomeVenditore">
+                <p>Nome Venditore</p>
+                <label><input class="input nome" name="VenditoreInput" id="VenditoreInput" placeholder="Linkswitch19" required th:value="${carta.getAuthor()}" th:field="*{author}"></label>
+            </div>
+
+            <!--
+              <p><label for="authorPost">Venditore</label> </p>
+              <p><input type="text" name="authorPost" id="authorPost"></p>
+              Altro metodo
+              questo è label{
+                  input()
+              }
+              -->
+
+            <div class="DataDiv"><label >
+                <p>Data Annuncio</p>
+                <input type="date" class="input" name="dataInput"  th:value="${#dates.format(carta.date, 'yyyy-MM-dd')}" th:field="*{date}"> </label>
+            </div>
+            <div class="StatoCarta">
+                <p>Stato Carta</p>
+                <label  for="StatoCarta">
+                    <select name="StatoCarta" id="StatoCarta" class="input"  th:field="*{condizione}">
+                        <option value="" disabled selected>Seleziona uno stato</option> <!-- Placeholder  elemento non selezionabile-->
+
+                        <option th:each="condizione:${statoCarta}" th:value="${condizione.name()}" th:text="${condizione}"></option>
+
+                    </select>
+                </label>
+            </div>
+
+            <label > <p>Carica immagine carta:</p>
+                <input class="input" type="file" name="ImmagineCartaInput" id="ImmagineCartaInput" required accept="image/*">
+            </label>
+
+
+            <div id="DescrizioneCartaDiv">
+                <p>Descrivi carta</p>
+                <p><textarea class="input" name="DescrizioneCarta" id="DescrizioneCarta" rows="4" cols="50"  th:text="${carta.description}" th:field="*{description}"></textarea></p>
+            </div>
+
+
+
+
+            <p class="invia"></p>
+
+
+
+
+        </fieldset>
+
+    </form>
+</div>

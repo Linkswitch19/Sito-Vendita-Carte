@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aggiungi una carta">
+    <meta name="author" content="Andre Peiti Ocampo">
+    <meta name="language" content="it">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registrazione.css">
+    <script type="module" src="scripts/registerAnimazione.js"></script>
+    <script type="module" src="scripts/registrazioneCheck.js"></script>
+    
+    <title>Registrazione</title>
+</head>
+<body>
+    <div class= "navbar">
+
+        <header>
+            <img src="immagini/logo.jpg" alt="Carte collezionabili " >
+        </header>
+    
+    <nav>
+        
+       
+        
+            
+            <ul >
+                <!--meglio # a vuoto-->
+                <li><a href="../templates/index.html"> HOME</a></li>
+                <li> <a href="../templates/cardSaleForm.html" >SELL A CARD</a></li>
+                <li> <a href="#" id="scelta">LOGIN/REGISTRATI</a></li>
+                <li><a href="https://en.ws-tcg.com/"> SITO UFFICIALE</a></li>
+            </ul>
+    
+        
+        
+      
+    </nav>
+
+    </div>
+    <main>
+        <h1 class="intestazione">Registrazione/Login</h1>
+        <section>
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#" id="registrazioneID">
+                        <h1>Registarti</h1>
+                        <div class="infield">
+                            <input type="text" placeholder="Name" class="nome" >
+                            
+                            <label></label>
+                        </div>
+                        <div class="infield">
+                            <input type="text" placeholder="Last Name" name ="lastName" class="nome">
+                            <label></label>
+                        </div>
+                        <div class="infield">
+                            <input type="text" placeholder="Username" name="username" id="username">
+                            <label></label>
+                        </div>
+                        <div class="infield">
+                            <input type="password" placeholder="Password" class="password">
+                            <label></label>
+                        </div>
+                        <div class="infield">
+                            <input type="password" placeholder="Confirm Password" class="password" >
+                            <label></label>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h1>Login</h1>
+                       
+                        
+                        <div class="infield">
+                            <input type="text" placeholder="Username" name="username">
+                            <label></label>
+                        </div>
+                        <div class="infield">
+                            <input type="password" placeholder="Password" >
+                            <label></label>
+                        </div>
+                        <a href="#" class="forgot">Password Dimenticata?</a>
+                        <input type="submit" value="Conferma" class="bottoneSubmit">
+                    </form>
+                </div>
+                <div class="overlay-container" id="overlayCon">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Supsi Card Shop</h1>
+                            <p>Hai già un Account??</p>
+                            <button>Sign In</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Supsi Card Shop</h1>
+                            <p>Crea un account per iniziare a vendere carte</p>
+                            <button>Sign Up</button>
+                        </div>
+                    </div>
+                    
+                    <button id="overlayBtn"></button>
+                </div>
+            </div>
+        </section>
+       
+    </main>
+
+    <footer>
+        <small>
+            "Copyleft CC-by 2025 by Andre”
+        </small>
+            
+    </footer>
+    
+</body>
+</html>

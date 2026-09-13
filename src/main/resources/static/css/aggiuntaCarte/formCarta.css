@@ -1,0 +1,143 @@
+.containerForm{
+    display: grid;
+    
+   
+    
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-image: linear-gradient(-155deg, #EEE 50%,var(--mainColor) 50%,  #2980b9 );
+
+    padding: 4rem;
+    min-height: 88vh;
+    
+    
+    
+}
+
+fieldset{
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(auto,1fr); /*Gestisce da solo*/
+    
+
+   
+    border-radius: 16px;
+    row-gap: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    box-shadow: var(--shadowBlack); /*hsla(h, s%, l%, a)*/
+    background-color: white;
+    min-width: 120vh;
+    
+    padding: 1rem;
+  
+
+}
+.NomeCarta,.NomeVenditore,.DataDiv,.StatoCarta{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#DescrizioneCartaDiv{
+    grid-column: 1/-1;
+   
+   
+}
+
+#DescrizioneCarta {
+    
+    width: 95%;
+ 
+    resize: none; /* Opzionale: disabilita il ridimensionamento manuale */
+    
+}
+
+.invia {
+    grid-column: 1/-1; 
+
+  
+   
+}
+
+#inviaInput{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 12px 16px;
+    background-color: var(--mainColor);
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s;
+    margin-right: 2.7rem;
+    width: 95%;
+
+}
+
+
+
+
+
+#inviaInput:hover{
+    background-color:black ;
+    color: var(--mainColor);
+    
+
+}
+
+
+
+select,.input{
+    border: none;
+    width: 90%;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: #f3f3f3;
+    
+
+}
+
+.input:focus{
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+	background-color: #FFF;
+}
+
+
+/* Media Query per schermi più piccoli */
+@media (max-width: 768px) {
+ 
+
+    fieldset {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto,1fr);
+        
+    }
+
+   
+
+   
+
+    
+
+    
+#DescrizioneCarta ,#inviaInput{
+    
+    width: 90%;
+
+ 
+   
+    
+}
+
+
+
+  
+}
+

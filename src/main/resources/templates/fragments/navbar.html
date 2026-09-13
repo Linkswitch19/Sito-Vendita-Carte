@@ -1,0 +1,22 @@
+<div class="navbar" th:fragment="navbar(paginaCorrente)">
+    <header>
+        <img src="/immagini/logo.jpg" alt="Carte collezionabili">
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/" th:id="${paginaCorrente == 'home'} ? 'scelta' : null">HOME</a>
+            </li>
+            <li>
+                <a href="/card/new" th:id="${paginaCorrente == 'sell'} ? 'scelta' : null">SELL A CARD</a>
+            </li>
+            <li>
+                <a href="/register" th:id="${paginaCorrente=='register'} ? 'scelta' :null">LOGIN/REGISTRATI</a>
+            </li>
+            <li>
+                <a href="https://en.ws-tcg.com/">SITO UFFICIALE</a>
+            </li>
+        </ul>
+    </nav>
+</div>

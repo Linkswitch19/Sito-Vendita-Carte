@@ -1,0 +1,8 @@
+<!--Sostituzione completa del th:block-->
+<div class="cartaMain" th:fragment="cartaInfo(carta)">
+
+   <th:block th:replace=" fragments/cartaMiniature ::cartaThumb(${carta})"></th:block>
+
+  <th:bloc th:replace="fragments/descrizioneCarta :: descCarta(${carta})"></th:bloc>
+
+</div>

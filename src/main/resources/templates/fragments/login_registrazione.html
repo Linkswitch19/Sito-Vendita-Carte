@@ -1,0 +1,66 @@
+<section th:fragment="registrazione" >
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form th:action="@{/register}" method="post" id="registrazioneID" >
+                <h1>Registarti</h1>
+                <!--Tramite name posso creare l'oggetto senza usare th:object e field-->
+                <div class="infield">
+                    <input type="text" placeholder="Name" class="nome" name="firstName"  >
+
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="text" placeholder="Last Name" name ="lastName" class="nome">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="text" placeholder="Username" name="username" id="username">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Password" class="password" name="password">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Confirm Password" class="password" >
+                    <label></label>
+                </div>
+
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form th:action="@{/login}" method="post" id="loginID">
+                <h1>Login</h1>
+
+
+
+                <div class="infield">
+                    <input type="text" placeholder="Username" name="username">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Password" name="password">
+                    <label></label>
+                </div>
+                <a href="#" class="forgot">Password Dimenticata?</a>
+                <input type="submit" value="Conferma" class="bottoneSubmit">
+            </form>
+        </div>
+        <div class="overlay-container" id="overlayCon">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Supsi Card Shop</h1>
+                    <p>Hai già un Account??</p>
+                    <button>Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Supsi Card Shop</h1>
+                    <p>Crea un account per iniziare a vendere carte</p>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+
+            <button id="overlayBtn"></button>
+        </div>
+    </div>
+</section>

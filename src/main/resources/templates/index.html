@@ -1,0 +1,23 @@
+<!---Metto solo quello che devo modificare nel layoult-->
+<!-- Non importa cosa metto al posto del primo div-->
+<div th:replace="~{fragments/layout :: layout(
+  pageTitle='Linkswitch19Card',
+  titolo='Carte in Evidenza (SlideShow statico Work in progress)',
+ nomePagina= 'home',
+ useBootstrap=true,
+ cssFile = ${{'/css/index.css'}},
+ pageScripts =${{'/scripts/ricerca.js'}},
+ pageContent = ~{::content}
+ )}">
+
+    <div th:fragment="content">
+        <div th:replace="fragments/slideShow::slideShow"></div>
+        <th:block th:replace=" fragments/ricerca ::ricerca"></th:block>
+        <div id="card-list-container">
+            <div th:replace="fragments/carte :: cardList(${carte})"></div>
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,109 @@
+/*
+Navbar
+*/
+
+.navbar{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 999;
+    
+    
+   
+    
+
+    
+}
+.navbar nav{
+    flex-grow: 1;
+    align-self: center;
+    
+    
+    
+    
+
+}
+
+.navbar header  img{
+   height: 100px;
+   width: auto;
+ 
+  
+
+    
+
+}
+
+.navbar header > img {
+    transition: transform 0.3s ease-in-out; /*animazione*/
+}
+
+.navbar header > img:hover {
+    transform: scale(1.2); /* Aumenta del 20% senza alterare il layout */
+}
+
+
+.navbar nav > ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8%;
+    padding-right: 20px;
+    font-weight:bold;
+    
+    
+}
+
+.navbar nav >ul >li{
+    position: relative;
+}
+
+.navbar nav >ul >li >a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.navbar nav >ul >li >a:visited {
+    color: white;
+
+}
+
+.navbar nav >ul >li >a:hover, #scelta{
+    color:  var(--mainColor) ;
+}
+
+
+
+.navbar nav > ul > li > a::after{ /* after aggiunge un elemento e lo modifica*/
+    content: "";
+    position: absolute;
+    
+   
+    background-color: var(--mainColor);
+    width: 50px;
+    opacity: 0;
+    height: 4px;
+    left: 50%;
+    bottom: -43.7px;
+    transform: translateX(-50%); 
+    
+   
+    
+
+}
+
+
+.navbar nav > ul > li > a:hover::after{
+    opacity: 1;
+    transition: all .2s ease-out; 
+    bottom: -42.7px;
+   
+}
+
+
+
