@@ -71,22 +71,22 @@
 L'applicazione segue l'architettura standard Spring MVC a livelli:
 
 ```
-   ┌─────────────────────────┐
+   ┌─────────────────────────────┐
    │   Controller (@Controller)  │  MainController, CardController,
-   │                              │  FormController, EditCardController
+   │                             │  FormController, EditCardController
    └─────────────┬───────────────┘
                  │
    ┌─────────────▼───────────────┐
-   │        Service                │  CardService, UserService, DBinit
+   │        Service              │  CardService, UserService, DBinit
    └─────────────┬───────────────┘
                  │
    ┌─────────────▼───────────────┐
-   │      Repository (JPA)          │  CardRepository, UserRepository
+   │      Repository (JPA)       │  CardRepository, UserRepository
    └─────────────┬───────────────┘
                  │
    ┌─────────────▼───────────────┐
-   │        Database                 │  H2 (file) / MySQL
-   └────────────────────────────────┘
+   │        Database             │  H2 (file) / MySQL
+   └─────────────────────────────┘
 ```
 
 L'autenticazione è gestita da `SecurityConfig`, che definisce le regole di accesso (pagine pubbliche vs. autenticate vs. riservate agli admin) e da `CustumUserDetailService` per il caricamento degli utenti.
